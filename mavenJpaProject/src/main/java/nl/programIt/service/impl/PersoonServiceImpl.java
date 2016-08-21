@@ -11,8 +11,7 @@ import nl.programIt.repository.IPersoonRepository;
 import nl.programIt.service.interfaces.IPersoonService;
 @Service
 @Transactional
-public class PersoonServiceImpl implements IPersoonService {
-	
+public class PersoonServiceImpl implements IPersoonService {	
 	//PersoonDaoImpl per=new PersoonDaoImpl();	
 	@Autowired
 	private IPersoonRepository persoonRepository;
@@ -20,7 +19,6 @@ public class PersoonServiceImpl implements IPersoonService {
 	public void AddPersoon(Persoon per) {
 		persoonRepository.save(per);//add call persist
 	}
-
 	@Override
 	public void deletePersoon(Long id) {
 		persoonRepository.delete(id);
@@ -30,11 +28,10 @@ public class PersoonServiceImpl implements IPersoonService {
 		List<Persoon> list=persoonRepository.findAll();
 		return list;
 	}
-
 	@Override
-	public Persoon findPersoonByFirstNameLastName(String firstName,
-			String LastName) {
-		Persoon p=persoonRepository.findByFirstNameAndLastName(firstName, LastName);
+	public Persoon findPersoonByEmailAndpassword(String userName,
+			String password) {
+		Persoon p=persoonRepository.findByEmailAndPassword(userName, password);
 		return p;
 	}
 

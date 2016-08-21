@@ -9,6 +9,6 @@ public interface IPersoonService {
 	public void AddPersoon(Persoon per);
 	public void deletePersoon(Long id);
 	public List<Persoon> findAllPesoon();
-	public Persoon findPersoonByFirstNameLastName(String firstName,String lastName);
+	public Persoon findPersoonByEmailAndpassword(String userName,String password);
 	
 }

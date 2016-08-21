@@ -1,7 +1,6 @@
 //src/main/java
 //Baddi 18-08-2016
 package nl.programIt.entities;
-
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -21,8 +20,9 @@ public class Persoon {
 	private String firstName;
 	private String lastName;
 	@Temporal(TemporalType.DATE)
-	private Date dateBirth;
-	
+	private Date dateBirth;	
+	private String email;
+	private String password;
 	//Getters en setters
 	public Long getIdPersoon() {
 		return idPersoon;
@@ -58,17 +58,30 @@ public class Persoon {
 	}
 
 
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
 	public Persoon() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Persoon(String firstName, String lastName,
-			Date dateBirth) {
+	public Persoon(String firstName, String lastName, Date dateBirth,
+			String email) {
 		super();
-		
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.dateBirth = dateBirth;
+		this.email = email;
 	}
+	
 
 }
