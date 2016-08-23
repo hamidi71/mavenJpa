@@ -20,11 +20,12 @@ public class PersoonServlet extends HttpServlet{
 			throws ServletException, IOException {
 		//HttpServletRequest ontvangen(vraag)
 		//HttpServletResponse verzenden(aantword)
-		String naam=vraag.getParameter("naam");
-		int leeftijd=Integer.valueOf(vraag.getParameter("leeftijd"));
+		String naam=vraag.getParameter("naamIndex");
+		int leeftijd=Integer.valueOf(vraag.getParameter("leeftijdIndex"));
+		
 		//System.out.println("naam is: "+ naam + "en leeftijd is: "+ leeftijd);
-		vraag.setAttribute("VoorNaam", naam);
-		vraag.setAttribute("leeftijd", leeftijd);
+		vraag.setAttribute("naamHome", naam);
+		vraag.setAttribute("leeftijdHome", leeftijd);
 		vraag.getRequestDispatcher("home.jsp").forward(vraag, aantword);;
 		
 		
