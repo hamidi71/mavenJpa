@@ -2,12 +2,9 @@ package nl.programIt.test;
 //test is gemaakt door Baddi op 17-08-2012
 
 import static org.junit.Assert.*;
-
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-
-import nl.programIt.ApplicationConfig;
 import nl.programIt.entities.Persoon;
 import nl.programIt.service.interfaces.IPersoonService;
 
@@ -16,12 +13,10 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-
 //Declare la relation entre spring et Junit
 @RunWith(SpringJUnit4ClassRunner.class)
 //@ContextConfiguration(locations={"classpath:applicationContext.xml"})
-//@ContextConfiguration(locations="classpath:applicationContext.xml")
-@ContextConfiguration(classes= ApplicationConfig.class)
+@ContextConfiguration(locations="classpath:applicationContext.xml")
 public class PersoonServieceImplTest {
 	@Autowired
 	private IPersoonService pers;	
@@ -39,10 +34,10 @@ public class PersoonServieceImplTest {
 		//bij deze de datum is datum van(het systeem) vandaag
 		Persoon p5=new Persoon("Mohammed","Hamidi", new Date(),"mohammed@gmail.com");
 		pers.AddPersoon(p1);
-		pers.AddPersoon(p2);
-		pers.AddPersoon(p3);
-		pers.AddPersoon(p4);
-		pers.AddPersoon(p5);
+		//pers.AddPersoon(p2);
+		//pers.AddPersoon(p3);
+		//pers.AddPersoon(p4);
+		//pers.AddPersoon(p5);
 		assertTrue(true);
 			
 		} catch (Exception e) {
