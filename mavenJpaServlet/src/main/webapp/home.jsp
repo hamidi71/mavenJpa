@@ -11,5 +11,6 @@
 	<%-- <h1>Naam:<%=request.getAttribute("NaamHome")%> 
 	Leeftijd: <%=request.getAttribute("leeftijdHome")%></h1> --%>
 	<c:out value="${naamHome}"></c:out>
+	${leeftijdHome}
 </body>
 </html>
